@@ -344,7 +344,7 @@ code {
   clear: both;
 }
 #header {
-  background: #26272b;
+  background-image: url("https://ws1.sinaimg.cn/large/afa0bae1gy1fw0xjlj9hgj218g0920xx.jpg");
   padding-bottom: 60px;
   position: relative;
 }
@@ -1619,7 +1619,7 @@ a.article-title:hover {
   color: #ddd;
 }
 #footer {
-  background: #33363b;
+  background-image: url("https://ws1.sinaimg.cn/large/afa0bae1gy1fw0xjwe3bhj218f09278q.jpg");
   margin-top: 60px;
   color: #aaa;
   line-height: 1.6em;
