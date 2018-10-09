@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>异常【JAVA学习笔记】 | Sany&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="learn,java,excption" />
+    
+    <meta name="description" content="一、概述在JAVA中用类的形式对不正常情况进行了描述和封装对象。描述不正常的类，称为异常类。以前正常流程代码和问题代码处理相结合，现在将正常流程代码和问题处理代码分离，提高阅读性。其实异常就是java通过面向对象的思想将代码遇到的问题封装成了对象，用异常类对其进行描述。 Java 中的异常都是基于 C++ 基础之上的。并非所有异常都定义在 java.lang 包中的。  二、异常体系问题很多，意味">
+<meta name="keywords" content="learn,java,excption">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异常【JAVA学习笔记】">
+<meta property="og:url" content="http://san-y.github.io/异常【JAVA学习笔记】/index.html">
+<meta property="og:site_name" content="Sany&#39;s Blog">
+<meta property="og:description" content="一、概述在JAVA中用类的形式对不正常情况进行了描述和封装对象。描述不正常的类，称为异常类。以前正常流程代码和问题代码处理相结合，现在将正常流程代码和问题处理代码分离，提高阅读性。其实异常就是java通过面向对象的思想将代码遇到的问题封装成了对象，用异常类对其进行描述。 Java 中的异常都是基于 C++ 基础之上的。并非所有异常都定义在 java.lang 包中的。  二、异常体系问题很多，意味">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://static001.geekbang.org/resource/image/ac/00/accba531a365e6ae39614ebfa3273900.png">
+<meta property="og:updated_time" content="2018-10-09T09:57:14.675Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="异常【JAVA学习笔记】">
+<meta name="twitter:description" content="一、概述在JAVA中用类的形式对不正常情况进行了描述和封装对象。描述不正常的类，称为异常类。以前正常流程代码和问题代码处理相结合，现在将正常流程代码和问题处理代码分离，提高阅读性。其实异常就是java通过面向对象的思想将代码遇到的问题封装成了对象，用异常类对其进行描述。 Java 中的异常都是基于 C++ 基础之上的。并非所有异常都定义在 java.lang 包中的。  二、异常体系问题很多，意味">
+<meta name="twitter:image" content="https://static001.geekbang.org/resource/image/ac/00/accba531a365e6ae39614ebfa3273900.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Sany&#39;s Blog" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/css/image/favicon.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-127132923-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Getting Better Each Day!!!</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/">life</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/life/test/">test</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/">技术</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/java/">java</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/技术/java/">java</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-异常【JAVA学习笔记】" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        异常【JAVA学习笔记】
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/异常【JAVA学习笔记】/" class="article-date">
+            <time datetime="2018-10-09T09:11:04.000Z" itemprop="datePublished">2018-10-09</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/excption/">excption</a>, <a class="tag-link" href="/tags/java/">java</a>, <a class="tag-link" href="/tags/learn/">learn</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><pre><code>在JAVA中用类的形式对不正常情况进行了描述和封装对象。描述不正常的类，称为异常类。以前正常流程代码和问题代码处理相结合，现在将正常流程代码和问题处理代码分离，提高阅读性。其实异常就是java通过面向对象的思想将代码遇到的问题封装成了对象，用异常类对其进行描述。
+Java 中的异常都是基于 C++ 基础之上的。并非所有异常都定义在 java.lang 包中的。
+</code></pre><hr>
+<h2 id="二、异常体系"><a href="#二、异常体系" class="headerlink" title="二、异常体系"></a>二、异常体系</h2><pre><code>问题很多，意味着描述的类也很多将其共性进行向上抽取，形成了异常体系：
+</code></pre><p><img src="https://static001.geekbang.org/resource/image/ac/00/accba531a365e6ae39614ebfa3273900.png" alt="java异常体系"><br>        <strong>注意：异常和错误的区别：异常能被程序本身可以处理，错误是无法处理。</strong></p>
+<ul>
+<li><p>Throwable</p>
+<blockquote>
+</blockquote>
+<p> Throwable是 Java 语言中所有错误或异常的超类。<br>　　Throwable包含两个子类: Error 和 Exception。它们通常用于指示发生了异常情况。<br>　　Throwable包含了其线程创建时线程执行堆栈的快照，它提供了printStackTrace()等接口用于获取堆栈跟踪数据等信息。<br>　　在 Throwable 中只有三个基本的异常类提供了带 cause 参数的构造器，分别是 Exception、Error、RuntimeException，如果要链接其他类型的异常类，应该使用 initCause() 方法。</p>
+</li>
+<li><p>Error(它们在应用程序的控制和处理能力之外)</p>
+<blockquote>
+</blockquote>
+<p>　  它用于指示合理的应用程序不应该试图捕获的严重问题，大多数错误与代码编写者执行的操作无关，而表示代码运行时 JVM（Java 虚拟机）出现的问题。例如，Java虚拟机运行错误（Virtual MachineError），当 JVM 不再有继续执行操作所需的内存资源时，将出现 OutOfMemoryError。这些异常发生时，Java虚拟机（JVM）一般会选择线程终止。<br>　　这些错误表示故障发生于虚拟机自身、或者发生在虚拟机试图执行应用时，如Java虚拟机运行错误（Virtual MachineError）、类定义错误（NoClassDefFoundError）等。这些错误是不可查的，因为它们在应用程序的控制和处理能力之 外，而且绝大多数是程序运行时不允许出现的状况。对于设计合理的应用程序来说，即使确实发生了错误，本质上也不应该试图去处理它所引起的异常状况。在 Java中，错误通过Error的子类描述。<br>　　它用于表示编译时和系统错误（除非特殊情况，一般不用关心？）——《Java 编程思想》<br>　　和RuntimeException一样，编译器也不会检查Error。</p>
+</li>
+<li><p>Exception(是所有基本异常的基类)</p>
+<blockquote>
+</blockquote>
+<p>　  Exception 是程序正常运行中，可以预料的意外情况，可以预料的意外情况，可能并且应该被捕获，进行相应处理。<br>　  Exception又分为可检查（checked)异常和不可检查（unchecked)异常，<strong>可检查异常在源代码里必须显式地进行捕获处理，这是编译器检查的一部分。</strong><br>　  自定义异常是 checked Exception。</p>
+</li>
+<li><p>RuntimeException（不检查（unchecked)异常）</p>
+<blockquote>
+</blockquote>
+<p>　　是 Exception 子类，但属于 unchecked excepiton。RuntimeException 类及其子类表示“JVM 常用操作”引发的错误，即那些可能在 Java 虚拟机正常运行期间抛出的异常。编译器不会检查RuntimeException异常。通常是可以编码避免的逻辑错误，具体根据需要来判断是否需要捕获，并不会在编译期强制要求。<br>　　eg:<br>　　若试图使用空值对象引用、除数为零或数组越界，则分别引发运行时异常（NullPointerException、ArithmeticException）和 ArrayIndexOutOfBoundException。RuntimeException是ArithmeticException的超类。当代码发生除数为零的情况时，倘若既”没有通过throws声明抛出ArithmeticException异常”，也”没有通过try…catch…处理该异常”，也能通过编译。这就是我们所说的”编译器不会检查RuntimeException异常”！<br>　　如果代码会产生RuntimeException异常，则需要通过修改代码进行避免。例如，若会发生除数为零的情况，则需要通过代码避免该情况的发生！</p>
+</li>
+</ul>
+<p><strong>Java将可抛出(Throwable)的结构分为三种类型：被检查的异常(Checked Exception)，不可查异常(unchecked Exception)。其中不可查异常又分为运行时异常(RuntimeException 及其子类)和错误(Error).</strong></p>
+<hr>
+<h2 id="三、异常的处理"><a href="#三、异常的处理" class="headerlink" title="三、异常的处理"></a>三、异常的处理</h2><p>try-catch用来处理异常，throws用来抛出异常。</p>
+<ol>
+<li><p>Throws抛出原理<br>如果让一个类称为异常类，必须要继承异常体系，因为只有称为异常体系的子类才有资格具备可抛性。才可以被两个关键词操作，throws  ,throw。<br> <strong>throws和throw的区别：</strong></p>
+<ul>
+<li>throws用在函数上（在函数上用throws对该类进行声明，以便于调用者对该问题预先的定义处理方式，throw用在函数内。</li>
+<li>throws抛出的是异常类，可以抛出多个，用逗号隔开。throw抛出的是异常对象。</li>
+</ul>
+</li>
+<li><p>Try-Catch捕获形式<br>这是可以对异常进行针对性处理的方式。</p>
+<ul>
+<li>try{//需要被检测异常的代码}</li>
+<li>catch(异常类 变量){//处理异常的代码}<br>  一个捕捉当中存在几个catch情况:如果存在父类catch情况，一定要把父类catch放在catch语句的最后面。</li>
+<li><p>finally{//一定会被执行的代码}<br>通常用于关闭（释放）资源。finally只要存在就会被执行，只有一种情况不会被执行，System.exit(0)关闭JVM。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">        try &#123;</span><br><span class="line">			Scanner input = new Scanner(System.in);</span><br><span class="line">			System.out.println(&quot;请输入除数：&quot;);</span><br><span class="line">			int num1 = input.nextInt();</span><br><span class="line">			System.out.println(&quot;请输入被除数：&quot;);</span><br><span class="line">			int num2 = input.nextInt();</span><br><span class="line">			int num = num1/num2;</span><br><span class="line">			System.out.println(&quot;商是：&quot;+num);</span><br><span class="line">			System.exit(1);//强制退出JVM进程</span><br><span class="line">			</span><br><span class="line">		&#125; catch (Exception e) &#123;//Exception捕获异常的实例对象</span><br><span class="line">//			e.printStackTrace(); 输出所有异常信息</span><br><span class="line">/*			String mes = e.getMessage();//返回异常的错误信息,这种方法不常用</span><br><span class="line">			System.err.println(mes);*/</span><br><span class="line">		&#125;	finally &#123;//finally块中代码始终会被执行</span><br><span class="line">			System.out.println(&quot;感谢使用&quot;);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>try catch finally代码块儿组合特点:</p>
+</li>
+</ul>
+<ol>
+<li>try catch finally</li>
+<li>try catch（多个）: catch和finally块为可选，但两者至少出现其中之一。当没有必要资源需要释放时，可以不用定义finally。</li>
+<li>try finally ：异常无法直接catch处理，但是资源需要关闭。</li>
+</ol>
+<ul>
+<li>发生异常的执行顺序：<blockquote>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>执行try、catch块中return之前的语句</li>
+<li>执行finally块中的语句</li>
+<li>执行try、catch块中的return语句</li>
+</ol>
+<ul>
+<li>扩展：随着 Java语言的发展，引入了一些更加便利的特性，比如try-with-resources 和 multiple catch，具体可以参考下面的代码段。在编译时期，会自动生成相应的处理逻辑，比如按照约定熟成close那些扩展了AutoCloseable或者Closeable的对象。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    try (BufferedReader br = new BufferedReader(…);</span><br><span class="line">     BufferedWriter writer = new BufferedWriter(…)) &#123;// Try-with-resources</span><br><span class="line">// do something</span><br><span class="line">catch ( IOException | XEception e) &#123;// Multiple catch</span><br><span class="line">   // Handle it</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="四、异常处理的原则"><a href="#四、异常处理的原则" class="headerlink" title="四、异常处理的原则"></a>四、异常处理的原则</h2><ol>
+<li>尽量不要使用类似Excption这样的通用异常，而是应该捕获特定异常。(方便查询问题，让代码直观的体现出尽量多的信息）</li>
+<li>不要生吞（swallow）异常。如果我们不把异常抛出，或者也没有输出到日志（Logger)之类，程序可能在后续代码以不可控的方式结束，就很难判断哪里抛出了异常，及什么原因产生了异常。</li>
+<li>尽量不要使用e.printStackTrace()的方式输出错误日志，看看printStackTrace()的文档，该方法的错误日志信息会以standard error stream的方式输出。问题就在这里，在稍微复杂一点的生产系统中，标准出错(STERR）不是个合适的输出选项，因为你很难判断日志到底输出到哪里去了。<strong>特别在分布式系统中，如果发生异常，但是无法找到堆栈轨迹（stacktrace),这纯属为诊断设置障碍。所以，最好使用产品日志，详细地输出到日志系统里。</strong></li>
+<li><p>Throw early,catch late原则： 不要推诿或延迟处理异常，就地解决最好，并且需要实实在在的进行处理，而不是只捕捉，不动作。</p>
+<ul>
+<li>Throw early 尽早抛出异常：<br>eg:<figure class="highlight plain"><figcaption><span>void readPreferences(String fileName)&#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	 //...perform operations... </span><br><span class="line">	InputStream in = new FileInputStream(fileName);</span><br><span class="line">	 //...read the preferences file...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果 fileName 是 null，那么程序就会抛出 NullPointerException，但是由于没有第一时间暴露出问题，堆栈信息可能非常令人费解，往往需要相对复杂的定位。这个 NPE 只是作为例子，实际产品代码中，可能是各种情况，比如获取配置失败之类的。在发现问题的时候，第一时间抛出，能够更加清晰地反映问题。<br>我们可以修改一下，让问题“throw early”，对应的异常信息就非常直观了。</p>
+<figure class="highlight plain"><figcaption><span>void readPreferences(String filename) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	Objects. requireNonNull(filename);</span><br><span class="line">	//...perform other operations... </span><br><span class="line">	InputStream in = new FileInputStream(filename);</span><br><span class="line">	 //...read the preferences file...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>catch late<blockquote>
+<p>至于“catch late”，其实是我们经常苦恼的问题，捕获异常后，需要怎么处理呢？最差的处理方式，就是我前面提到的“生吞异常”，本质上其实是掩盖问题。如果实在不知道如何处理，可以选择保留原有异常的cause 信息，直接再抛出或者构建新的异常抛出去。在更高层面，因为有了清晰的（业务）逻辑，往往会更清楚合适的处理方式是什么。<br> 有的时候，我们会根据需要自定义异常，这个时候除了保证提供足够的信息，还有两点需要考虑：</p>
+<ul>
+<li>是否需要定义成 Checked Exception，因为这种类型设计的初衷更是为了从异常情况恢复，作为异常设计者，我们往往有充足信息进行分类。</li>
+<li>在保证诊断信息足够的同时，也要考虑避免包含敏感信息，因为那样可能导致潜在的安全问题。如果我们看 Java 的标准类库，你可能注意到类似 java.net.ConnectException，出错信息是类似“ Connection refused (Connection refused)”，而不包含具体的机器名、IP、端口等，一个重要考量就是信息安全。类似的情况在日志中也有，比如，用户数据一般是不可以输出到日志里面的。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="五、异常性能开销"><a href="#五、异常性能开销" class="headerlink" title="五、异常性能开销"></a>五、异常性能开销</h2><p>我们从性能角度来审视一下 Java 的异常处理机制，这里有两个可能会相对昂贵的地方：</p>
+<ul>
+<li>try-catch 代码段会产生额外的性能开销，或者换个角度说，它往往会影响 JVM 对代码进行优化，所以建议仅捕获有必要的代码段，尽量不要一个大的 try 包住整段的代码；与此同时，利用异常控制代码流程，也不是一个好主意，远比我们通常意义上的条件语句（if/else、switch）要低效。</li>
+<li>Java 每实例化一个 Exception，都会对当时的栈进行快照，这是一个相对比较重的操作。如果发生的非常频繁，这个开销可就不能被忽略了。</li>
+</ul>
+<p>当我们的服务出现反应变慢、吞吐量下降的时候，检查发生最频繁的 Exception 也是一种思路。关于诊断后台变慢的问题，我会在后面的 Java 性能基础模块中系统探讨。</p>
+<h2 id="六、常见面试问题"><a href="#六、常见面试问题" class="headerlink" title="六、常见面试问题"></a>六、常见面试问题</h2><ol>
+<li>NoClassDefFoundError 和 ClassNotFoundException 有什么区别？<br>NoClassDefFoundError是一个错误(Error)，而ClassNOtFoundException是一个异常，在Java中对于错误和异常的处理是不同的，我们可以从异常中恢复程序但却不应该尝试从错误中恢复程序。<ul>
+<li>ClassNotFoundException的产生原因：<br>Java支持使用Class.forName方法来动态地加载类，任意一个类的类名如果被作为参数传递给这个方法都将导致该类被加载到JVM内存中，如果这个类在类路径中没有被找到，那么此时就会在运行时抛出ClassNotFoundException异常。</li>
+<li>NoClassDefFoundError产生的原因在于：<br>如果JVM或者ClassLoader实例尝试加载（可以通过正常的方法调用，也可能是使用new来创建新的对象）类的时候却找不到类的定义。要查找的类在编译的时候是存在的，运行的时候却找不到了。这个时候就会导致NoClassDefFoundError.<br>造成该问题的原因可能是打包过程漏掉了部分类，或者jar包出现损坏或者篡改。解决这个问题的办法是查找那些在开发期间存在于类路径下但在运行期间却不在类路径下的类。</li>
+</ul>
+</li>
+<li>写出引起OutOfMemoryError和StackOverflowError的代码示例<br><a href="http://arthur503.github.io/blog/2013/10/10/Java-OutOfMemoryError-and-StackOverflowError.html" target="_blank" rel="noopener">OutOfMemoryError和StackOverflowError</a></li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/San-y" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/testFile/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">testFile</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/异常【JAVA学习笔记】/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://static001.geekbang.org/resource/image/ac/00/accba531a365e6ae39614ebfa3273900.png)" alt="异常【JAVA学习笔记】" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/java/">java</a></p>
+                            <p class="item-title"><a href="/异常【JAVA学习笔记】/" class="title">异常【JAVA学习笔记】</a></p>
+                            <p class="item-date"><time datetime="2018-10-09T09:11:04.000Z" itemprop="datePublished">2018-10-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/testFile/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/life/">life</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/life/test/">test</a></p>
+                            <p class="item-title"><a href="/testFile/" class="title">testFile</a></p>
+                            <p class="item-date"><time datetime="2018-09-21T09:11:04.000Z" itemprop="datePublished">2018-09-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2018-09-19T08:44:05.037Z" itemprop="datePublished">2018-09-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/life/test/">test</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/java/">java</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/excption/">excption</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/file/">file</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/">learn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/excption/" style="font-size: 10px;">excption</a> <a href="/tags/file/" style="font-size: 10px;">file</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/test/" style="font-size: 10px;">test</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 Sany</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+        
+    
+    <script>
+    var disqus_shortname = 'san-y';
+    
+    
+    var disqus_url = 'http://san-y.github.io/异常【JAVA学习笔记】/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
