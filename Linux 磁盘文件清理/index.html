@@ -6,21 +6,26 @@
     
 
     
-    <title>归档: 2018 | Sany&#39;s Blog</title>
+    <title>Linux 磁盘文件清理 | Sany&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="技术，故事，还有生活">
-<meta name="keywords" content="技术,故事,生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sany&#39;s Blog">
-<meta property="og:url" content="http://san-y.github.io/archives/2018/index.html">
+        <meta name="keywords" content="linux" />
+    
+    <meta name="description" content="由于linux 的根目录挂在的大小只有50G，CDH的环境又安装在/opt目录下，导致/目录的可用空间总是岌岌可危。经常面临需要清理硬盘的情况。期间产生了一下问题，故作此记录！  确认磁盘可用空间  查看磁盘信息：  /]# df -lh```12345   可以查看各文件系统（磁盘）下的挂载点的容量使用情况。2. 查看各文件夹大小及定位大文件   &amp;gt; 进入根目录   ```[root@ma">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 磁盘文件清理">
+<meta property="og:url" content="http://san-y.github.io/Linux 磁盘文件清理/index.html">
 <meta property="og:site_name" content="Sany&#39;s Blog">
-<meta property="og:description" content="技术，故事，还有生活">
+<meta property="og:description" content="由于linux 的根目录挂在的大小只有50G，CDH的环境又安装在/opt目录下，导致/目录的可用空间总是岌岌可危。经常面临需要清理硬盘的情况。期间产生了一下问题，故作此记录！  确认磁盘可用空间  查看磁盘信息：  /]# df -lh```12345   可以查看各文件系统（磁盘）下的挂载点的容量使用情况。2. 查看各文件夹大小及定位大文件   &amp;gt; 进入根目录   ```[root@ma">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://betanews.com/wp-content/uploads/2018/08/chromebook-linux.jpg">
+<meta property="og:updated_time" content="2018-10-10T03:50:32.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sany&#39;s Blog">
-<meta name="twitter:description" content="技术，故事，还有生活">
+<meta name="twitter:title" content="Linux 磁盘文件清理">
+<meta name="twitter:description" content="由于linux 的根目录挂在的大小只有50G，CDH的环境又安装在/opt目录下，导致/目录的可用空间总是岌岌可危。经常面临需要清理硬盘的情况。期间产生了一下问题，故作此记录！  确认磁盘可用空间  查看磁盘信息：  /]# df -lh```12345   可以查看各文件系统（磁盘）下的挂载点的容量使用情况。2. 查看各文件夹大小及定位大文件   &amp;gt; 进入根目录   ```[root@ma">
+<meta name="twitter:image" content="https://betanews.com/wp-content/uploads/2018/08/chromebook-linux.jpg">
     
 
     
@@ -146,232 +151,144 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>归档: 2018
+    <a class="page-title-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/技术/LINUX/">LINUX</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-Linux 磁盘文件清理" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/Linux 磁盘文件清理/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://betanews.com/wp-content/uploads/2018/08/chromebook-linux.jpg)" alt="Linux 磁盘文件清理" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://san-y.github.io/Linux 磁盘文件清理/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/LINUX/">LINUX</a>
-            </div>
-            <div class="date"><time datetime="2018-10-09T09:11:04.000Z" itemprop="datePublished">2018-10-09</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/Linux 磁盘文件清理/">Linux 磁盘文件清理</a>
+        Linux 磁盘文件清理
         </h1>
     
 
-        <p class="article-excerpt">
-            由于linux 的根目录挂在的大小只有50G，CDH的环境又安装在/opt目录下，导致/目录的可用空间总是岌岌可危。经常面临需要清理硬盘的情况。期间产生了一下问题，故作此记录！
-
-确认磁盘可用空间
-
-查看磁盘信息：
- /]# df -lh```12345   可以查看各文件系统（磁盘）下的挂载点的容量使用情况。2. 查看各文件夹大小及定位大文件   &gt; 进入根目录   ```[root@ma
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/Linux 磁盘文件清理/" class="article-date">
+            <time datetime="2018-10-09T09:11:04.000Z" itemprop="datePublished">2018-10-09</time>
+        </a>
     </div>
-</article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/异常【JAVA学习笔记】/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://static001.geekbang.org/resource/image/ac/00/accba531a365e6ae39614ebfa3273900.png)" alt="异常【JAVA学习笔记】" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://san-y.github.io/异常【JAVA学习笔记】/">0</span>
-    
-</span>
+		
 
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/linux/">linux</a>
+    </div>
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/JAVA/">JAVA</a>
             </div>
-            <div class="date"><time datetime="2018-10-09T09:11:04.000Z" itemprop="datePublished">2018-10-09</time></div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>由于linux 的根目录挂在的大小只有50G，CDH的环境又安装在/opt目录下，导致/目录的可用空间总是岌岌可危。经常面临需要清理硬盘的情况。<br>期间产生了一下问题，故作此记录！<br><img src="https://betanews.com/wp-content/uploads/2018/08/chromebook-linux.jpg" alt="此处输入图片的描述"></p>
+<ol>
+<li><p>确认磁盘可用空间</p>
+<blockquote>
+<p>查看磁盘信息：</p>
+ <figure class="highlight plain"><figcaption><span>/]# df -lh```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   可以查看各文件系统（磁盘）下的挂载点的容量使用情况。</span><br><span class="line"></span><br><span class="line">2. 查看各文件夹大小及定位大文件</span><br><span class="line">   &gt; 进入根目录</span><br><span class="line">   ```[root@master /]# cd /</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>查看当前目录各文件夹占用空间大小</p>
+<figure class="highlight plain"><figcaption><span>/]# du -h --max-depth</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--max-depth=N选项:显示当前目录总计（于--all一起使用时计算文件数），当N为指定数值时计算深度为N，此处我们使用的是1，所以只计算当前目录文件夹。</span><br><span class="line"></span><br><span class="line">执行如上两个命令后将可以看到/目录下各文件夹占用空间大小，如法炮制，将很快能定位到可以清理的文件目录。</span><br><span class="line"></span><br><span class="line">&gt; 查看当前目录最大文件并从大到小展现：</span><br><span class="line">```[root@master /]# ls -lhS</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="3">
+<li><p>删除可清理的文件，如日志等<br>注：在生产环境种如果需要删除日志，最好先提前确认日志是否需要需要下载下来供开发人员分析。</p>
+<blockquote>
+<p>删除文件可清理的无用文件:</p>
+<pre><code><figure class="highlight plain"><figcaption><span>/]# rm -rf 111.log```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在某些情况下，删除文件后再使用`df -lh`查看磁盘空间，发现磁盘空间并没有变化。是因为在在Linux或者Unix系统中，通过rm或者文件管理器删除文件将会从文件系统的目录结构上解除链接(unlink).然而如果文件是被打开的（有一个进程正在使用），那么进程将仍然可以读取该文件，磁盘空间也一直被占用。</span><br><span class="line">也就是说，虽然日志文件虽然被手动删除，但是并未被释放，进程还是在后台读取着该文件。这时如需彻底删除此文件则需找到对应的使用它的执行进程。</span><br><span class="line">&gt; 确认删除文件是否被进程占用(被删除的文件将会被标注为deleted)</span><br><span class="line">```[root@master /]# lsof | grep deleted</span><br></pre></td></tr></table></figure>
+</code></pre></blockquote>
+<p>找到对应的被删除文件的占用线程并kill掉<br><code>[root@master /]# kill -9 ***</code></p>
+<p>再次查看磁盘空间，磁盘空间被成功释放。<br><strong>注意：kill 掉的进程（应用）也会被一起终止，如果应用需要继续执行，将需要被重启。</strong></p>
+</li>
+<li><p>最简单的不用重启应用请用日志文件的方式<br> 用覆盖当前日志文件的方式</p>
+<pre><code>`[root@master /]# &gt; file.log`
+`[root@master /]# echo &apos;&apos; &gt; file.log`
+`[root@master /]# cat /dev/null &gt; file.log`
+</code></pre></li>
+</ol>
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/异常【JAVA学习笔记】/">异常【JAVA学习笔记】</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            一、概述在JAVA中用类的形式对不正常情况进行了描述和封装对象。描述不正常的类，称为异常类。以前正常流程代码和问题代码处理相结合，现在将正常流程代码和问题处理代码分离，提高阅读性。其实异常就是java通过面向对象的思想将代码遇到的问题封装成了对象，用异常类对其进行描述。
-Java 中的异常都是基于 C++ 基础之上的。并非所有异常都定义在 java.lang 包中的。
-
-二、异常体系问题很多，意味
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/testFile/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://san-y.github.io/testFile/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/life/">life</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/life/test/">test</a>
-            </div>
-            <div class="date"><time datetime="2018-09-21T09:11:04.000Z" itemprop="datePublished">2018-09-21</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/testFile/">testFile</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            1.引用块
-样例
-
-没有提供参数，则只输出普通的 blockquote
-content
-[author[source]] [link] [source_link_title]
-
-引用书上的句子
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://san-y.github.io/hello-world/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
+        <footer class="article-footer">
             
-            </div>
-            <div class="date"><time datetime="2018-09-19T08:44:05.037Z" itemprop="datePublished">2018-09-19</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/hello-world/">Hello World</a>
-        </h1>
-    
 
-        <p class="article-excerpt">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-        </p>
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
     </div>
 </article>
-    
-        </div>
-    
 
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-    </div></section>
+    
+    </section>
 
 
 
@@ -401,6 +318,19 @@ Quick
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/异常【JAVA学习笔记】/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">异常【JAVA学习笔记】</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -593,11 +523,13 @@ Quick
     var disqus_shortname = 'san-y';
     
     
+    var disqus_url = 'http://san-y.github.io/Linux 磁盘文件清理/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
